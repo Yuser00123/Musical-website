@@ -10,6 +10,16 @@ gainNode.connect(audio.destination);
 
 gainNode.gain.value = 0;
 
+notename = new Map();
+
+notename.set("C", 261.6);
+notename.set("D", 293.7);
+notename.set("E", 329.6);
+notename.set("F", 349.2);
+notename.set("G", 392.0);
+notename.set("A", 440);
+notename.set("B", 493.9);
+
 oscillator.start();
 function frequency(pitch){
     gainNode.gain.setValueAtTime(1, audio.currentTime);
@@ -19,5 +29,6 @@ function frequency(pitch){
 
 function handle(){
     audio.resume();
-    frequency(input.value);
+    var userinput = String(input.value);
+    frequency(notename.get(userinput));
 }
