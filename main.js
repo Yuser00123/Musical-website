@@ -9,6 +9,10 @@ var y = 0;
 var freq = 0;
 var counter = 0;
 var interval = null;
+var repeat = null;
+var reset = false;
+var length = 0;
+var timepernote = 0;
 
 const audio = new AudioContext();
 const gainNode = audio.createGain();
@@ -20,7 +24,7 @@ gainNode.connect(audio.destination);
 
 gainNode.gain.value = 0;
 
-notename = new Map();
+const notename = new Map();
 
 notename.set("C", 261.6);
 notename.set("D", 293.7);
@@ -33,25 +37,29 @@ notename.set("B", 493.9);
 oscillator.start();
 
 function line(){
-    y = height/2 - (amplitude * Math.sin(freq * x));
+    y = height/2 - (amplitude * Math.sin(freq * x * 2 * Math.PI * length * 0.5));
     ctx.lineTo(x, y);
     ctx.stroke();
     x += 1;
     counter += 1;
 
-    if (counter >= 50){
+    if (counter > timepernote/20){
         clearInterval(interval);
     }
 }
 
 function drawSoundWave(){
+    clearInterval(interval);
     counter = 0;
-    x = 0;
-    y = height/2;
-    ctx.clearRect(0, 0, width, height);
 
-    ctx.beginPath();
-    ctx.moveTo(x, y);
+    if (reset){
+        ctx.clearRect(0, 0, width, height);
+        x = 0;
+        y = height/2;
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        reset = false;
+    }
     interval = setInterval(line, 20);
 }
 
@@ -59,17 +67,40 @@ function frequency(pitch){
     freq = pitch/10000;
     gainNode.gain.setValueAtTime(1, audio.currentTime);
     oscillator.frequency.setValueAtTime(pitch, audio.currentTime);
-    gainNode.gain.setValueAtTime(0, audio.currentTime + 1);
+    gainNode.gain.setValueAtTime(0, audio.currentTime + timepernote/1000);
 }
 
 function handle(){
+    reset = true;
+    clearInterval(repeat);
+
+    var userinput = String(input.value).toUpperCase();
+    length = userinput.length;
+    timepernote = 6000/length;
+    var notelists = [];
+
+    for(var i=0; i < userinput.length; i++){
+        var note = userinput.charAt(i);
+        var pitch = notename.get(note);
+
+        if (pitch == undefined || pitch == ""){
+            alert("Invalid note: " + note);
+            return
+        }
+        notelists.push(pitch);
+    }
+
     audio.resume();
-    var userinput = String(input.value);
-    if (userinput != undefined && userinput != ""){
-        frequency(notename.get(userinput));
-        drawSoundWave();
-    }
-    else{
-        alert("Please enter a valid note...");
-    }
+
+    var j = 0;
+    repeat = setInterval(() => {
+        if (j < notelists.length) {
+            frequency(Number(notelists[j]));
+            drawSoundWave();
+            j += 1;
+        } else {
+            clearInterval(repeat);
+            repeat = null;
+        }
+    }, timepernote);
 }
