@@ -1,7 +1,8 @@
 let input = document.getElementById("input");
 let color =document.getElementById("color");
 let volume = document.getElementById("volume-slider");
-var amplitude = 40;
+let lineWidth = document.getElementById("line-width");
+var amplitude = 50;
 var canvas = document.getElementById("canvas")
 var ctx = canvas.getContext("2d");
 var width = ctx.canvas.width;
@@ -41,6 +42,7 @@ oscillator.start();
 
 function line(){
     ctx.strokeStyle = color.value;
+    ctx.lineWidth = Number(lineWidth.value);
     y = height/2 - ((volume.value/100) * amplitude * Math.sin(freq * x * 2 * Math.PI * length * 0.5));
     ctx.lineTo(x, y);
     ctx.stroke();
@@ -87,7 +89,7 @@ function handle(){
 
     var userinput = String(input.value).toUpperCase();
     length = userinput.length;
-    timepernote = 6000/length;
+    timepernote = 8000/length;
     var notelists = [];
 
     for(var i=0; i < userinput.length; i++){
