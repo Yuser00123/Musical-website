@@ -20,6 +20,7 @@ var setting = null;
 var recorder = null;
 var blob = null;
 var chunks = [];
+let recordbtn = document.getElementById('record');
 
 const audio = new AudioContext();
 const gainNode = audio.createGain();
@@ -100,7 +101,8 @@ function startRecording(){
     audioDestination.stream.getAudioTracks().forEach(track => {
         combinedStream.addTrack(track);
     });
-
+    
+    chunks = [];
     recorder = new MediaRecorder(combinedStream);
 
     recorder.ondataavailable = (event) => {
@@ -109,19 +111,28 @@ function startRecording(){
 
     recorder.onstop = () => {
         blob = new Blob(chunks, { type: 'video/webm' });
-    }
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = "recording.webm";
+        a.click();
 
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = "recording.webm";
-    a.click();
-
-    setTimeout(() => {
-        URL.revokeObjectURL(url);
-    }, 1000);
+        setTimeout(() => {
+            URL.revokeObjectURL(url);
+        }, 1000);
+    };
 
     recorder.start();
+}
+
+function toggle(){
+    if (recorder && recorder.state === "recording"){
+        recorder.stop();
+        recordbtn.innerText = "Start recording";
+    } else {
+        startRecording();
+        recordbtn.innerText = "Stop recording";
+    }
 }
 
 function handle(){
