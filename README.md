@@ -8,9 +8,9 @@ It is a website on which we can run different musical notes such as C, D, E, F, 
 
 ## EXAMPLE RECORDING
 
-<video src="https://cdn.hackclub.com/01a1d8f8-b5ae-7de3-8df7-3216386c2090/recording%20(2).webm"width="340px" autoplay loop>
+![recording](https://cdn.hackclub.com/01a1d8fd-18af-7c64-9b67-17bd7c159ce7/recording%20(2).webp)
 
-In this recording it runs CEFG musical note.
+In this recording it runs CEFG musical note. It doesn't have sound as it is converted from WebM to WebP.
 
 ## HOW TO RUN
 
