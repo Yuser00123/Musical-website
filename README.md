@@ -1,74 +1,27 @@
-### Hi! Welcome to your VS Code Space!
+# MUSICAL WEBSITE
+It is a website on which we can run different musical notes such as C, D, E, F, G, A, B. We can play different notes together also, for this we shold type in input like this: CABD. This is just an example. It draw  a sine wave of the note played.
 
-You can use this just like VS Code on your own computer. Your space is a full Linux machine (Ubuntu) that's yours alone, and you have admin access, so you can install whatever you need with `sudo`.
+## SCREENSHOT
+![screenshot](https://cdn.hackclub.com/01a1d8e2-6117-776b-89a1-8dc3ee161474/musical-website-alpha.vercel.app-2026-11-14-1236.png)
 
-#### Good to know
+## HOW TO RUN
+Just download this repo using
 
-- **Your space stops by itself after 3 hours.** Everything is saved when it stops: your files, the tools you install and your settings. Start it again from the dashboard and you're right back where you left off.
-- **Only one space can run at a time.** Stop this one before starting another.
-- **Previewing a website you're building:** run it, then open `/proxy/<port>/` on this space's address, for example `/proxy/3000/` for something running on port 3000.
-
-#### Hackatime
-
-If you added your Hackatime API key in Settings before creating this space, Hackatime is already set up and tracking your time, under this space's name. If you added it later, install the "WakaTime" extension and paste your key when it asks.
-
-#### Already installed
-
-##### General
-```
-git
-github-cli (gh)
-curl
-wget
-nano
-vim
-zip
-unzip
-jq
-tree
-tmux
-less
-ripgrep (rg)
-rsync
+```bash
+git clone https://github.com/Yuser00123/Musical-website
 ```
 
-##### Python
-```
-python3
-pip
-uv
-```
+ Then open the index.html file on a browser and it is ready to use.
 
-##### JavaScript
-```
-node
-npm
-pnpm
-bun
-```
+ ## LIVE DEMO LINK
+ [Click here!](https://musical-website-alpha.vercel.app/)
 
-##### Database
-```
-sqlite3
-```
+ ## FEATURES
 
-#### Installing more
+ - Can play notes A, B, C, D, E, F and G.
+ - Can play multiple notes at one time.
+ - Draws sine wave of the note played.
+ - Color and thickness of the wave can be changed.
+ - Can record the musical note played with its sine wave.
 
-Use `apt` for anything else. Some common ones:
 
-| What | Command |
-|---|---|
-| C/C++ compilers and `make` (many npm and pip packages need these) | `sudo apt install -y build-essential cmake pkg-config` |
-| Java | `sudo apt install -y openjdk-21-jdk` |
-| Go | `sudo apt install -y golang` |
-| Rust | `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \| sh` |
-| PHP | `sudo apt install -y php-cli` |
-| Ruby | `sudo apt install -y ruby-full` |
-| Yarn | `npm install -g yarn` |
-| PostgreSQL, MySQL and Redis clients | `sudo apt install -y postgresql-client mysql-client redis-tools` |
-| ffmpeg and ImageMagick | `sudo apt install -y ffmpeg imagemagick` |
-| htop | `sudo apt install -y htop` |
-
-Run `sudo apt update` first if a package isn't found.
-
-If something you need won't install, or isn't working, ask in #spaces on Slack!
