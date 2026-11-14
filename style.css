@@ -33,8 +33,11 @@ button{
     height: 30px;
     border: 2.5px solid black;
     border-radius: 10px;
-    font-size: 20px;
     font-weight: bold;
+}
+
+#button{
+    font-size: 20px;
 }
 
 button:hover{
