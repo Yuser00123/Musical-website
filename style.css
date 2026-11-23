@@ -30,14 +30,18 @@
 
 button{
     width: 100px;
-    height: 30px;
     border: 2.5px solid black;
     border-radius: 10px;
     font-weight: bold;
+    font-size: 20px;
 }
 
 #button{
-    font-size: 20px;
+    height: 30px;
+}
+
+#record{
+    height: auto;
 }
 
 button:hover{
