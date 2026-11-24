@@ -169,3 +169,11 @@ function handle(){
         }
     }, timepernote);
 }
+
+function gotoChallenge(){
+    window.location.href = "challenge.html";
+}
+
+function goHome(){
+    window.location.href = "index.html";
+}

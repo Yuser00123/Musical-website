@@ -3,13 +3,14 @@
     <head>
         <title>Musical Website</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/png" href="favicon.png">
     </head>
     <body>
         <div id="container">
             <h1><u><i>Feel the music!</i></u></h1>
-            <input id="input">
+            <input id="input" placeholder="Enter musical note">
             <button type="button" id="button" onClick="handle()">PLAY!</button>
-            <canvas id="canvas" width="900" height="500"></canvas>
+            <canvas id="canvas" width="600" height="500"></canvas>
             <b>Color</b>
             <input type="color" id="color" value = #ff0000>
             <b>Volume</b>
@@ -18,6 +19,7 @@
             <input type="range" min="1" max="5" value="2" id="line-width" class="slider">
             <button id="record" onclick="toggle()">Start recording</button>
         </div>
+        <button id="challenge" onclick="gotoChallenge()">Take A Challenge</button>
         <script src="main.js"></script>
     </body>
 </html>
