@@ -73,7 +73,6 @@ body{
     flex-direction: column;
     align-items: center;
     font-size: large;
-    overflow: scroll;
 }
 
 #color{
