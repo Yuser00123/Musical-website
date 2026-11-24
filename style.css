@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Agrave+Pro:wght@100..700&family=Creepster&family=Fauna+One&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Salsa&display=swap');
 
+*{
+    margin: 0;
+    padding: 0;
+}
+
 #canvas{
     border: 6px solid black;
     width: 600px;
@@ -11,7 +16,6 @@
 #container{
     display: flex;
     height: 100vh;
-    justify-content: center;
     align-items: center;
     text-align: center;
     flex-direction: column;
@@ -67,7 +71,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    padding: 15px;
+    padding: 10px;
     font-family: 'Salsa', system-ui;
     display: flex;
     flex-direction: column;
