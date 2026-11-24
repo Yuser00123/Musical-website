@@ -1,6 +1,6 @@
 # MUSICAL WEBSITE
 
-It is a website on which we can run different musical notes such as C, D, E, F, G, A, B. We can play different notes together also, for this we shold type in input like this: CABD. This is just an example. It draw  a sine wave of the note played.
+It is a website on which we can run different musical notes such as C, D, E, F, G, A, B. We can play different notes together also, for this we shold type in input like this: CABD. This is just an example. It draw  a sine wave of the note played. It also have some amazing challenges.
 
 ## SCREENSHOT
 
