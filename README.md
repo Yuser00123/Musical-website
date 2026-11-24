@@ -4,7 +4,7 @@ It is a website on which we can run different musical notes such as C, D, E, F, 
 
 ## SCREENSHOT
 
-![screenshot](https://cdn.hackclub.com/01a1d8e2-6117-776b-89a1-8dc3ee161474/musical-website-alpha.vercel.app-2026-11-14-1236.png)
+![screenshot](https://cdn.hackclub.com/01a20c7c-6176-7c83-bd73-39aba3e3e979/musical-website-alpha.vercel.app-2026-11-24-1306.png)
 
 ## EXAMPLE RECORDING
 
