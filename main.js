@@ -158,6 +158,11 @@ function handle(){
     audio.resume();
 
     var j = 0;
+    if (notelists.length) {
+        frequency(Number(notelists[j]));
+        drawSoundWave();
+        j += 1;
+    }
     repeat = setInterval(() => {
         if (j < notelists.length) {
             frequency(Number(notelists[j]));
